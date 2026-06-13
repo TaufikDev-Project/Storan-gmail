@@ -2,656 +2,121 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Storan Gmail | By Taufik</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storan Gmail - Info Layanan</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background: #f5f7fb; padding: 20px; color: #1e293b; }
-        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1); overflow: hidden; min-height: 85vh; display: flex; flex-direction: column; }
-        .app-header { padding: 20px 20px 8px 20px; border-bottom: 1px solid #eef2f6; }
-        .greeting { font-size: 20px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
-        .user-badge { display: flex; align-items: center; gap: 12px; background: #f1f5f9; padding: 6px 14px; border-radius: 40px; }
-        .nav-tabs { display: flex; justify-content: space-around; padding: 12px 16px; background: white; border-bottom: 1px solid #eef2f6; gap: 6px; flex-wrap: wrap; }
-        .nav-item { flex: 1; text-align: center; padding: 10px 0; font-weight: 600; font-size: 13px; color: #5b6e8c; border-radius: 40px; cursor: pointer; transition: 0.2s; }
-        .nav-item i { margin-right: 6px; }
-        .nav-item.active { background: #eef2ff; color: #2563eb; }
-        .main-content { flex: 1; padding: 24px 20px; overflow-y: auto; }
-        .card { background: #ffffff; border-radius: 28px; padding: 20px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border: 1px solid #edf2f7; }
-        .saldo-box { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: 28px; padding: 20px; margin-bottom: 20px; }
-        .saldo-nilai { font-size: 32px; font-weight: 800; margin: 8px 0; }
-        .btn { background: #2563eb; border: none; color: white; padding: 12px 20px; border-radius: 60px; font-weight: 600; font-size: 14px; cursor: pointer; width: 100%; display: inline-flex; justify-content: center; align-items: center; gap: 8px; transition: 0.2s; }
-        .btn-outline { background: white; border: 1px solid #cbd5e1; color: #1f2937; }
-        .btn-warning { background: #f97316; }
-        .btn-sm { padding: 6px 14px; width: auto; font-size: 12px; }
-        .input-group { margin-bottom: 18px; }
-        .input-group label { font-weight: 600; font-size: 13px; display: block; margin-bottom: 6px; color: #334155; }
-        input, select { width: 100%; padding: 14px 16px; border: 1.5px solid #e2e8f0; border-radius: 24px; font-size: 14px; }
-        input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
-        .info-text { font-size: 12px; color: #64748b; margin-top: 6px; }
-        .riwayat-item, .admin-setoran-item { background: #f8fafc; border-radius: 20px; padding: 14px; margin-bottom: 12px; border-left: 4px solid #facc15; }
-        .badge { display: inline-block; padding: 4px 12px; border-radius: 40px; font-size: 12px; font-weight: 600; }
-        .badge-pending { background: #fef3c7; color: #b45309; }
-        .badge-success { background: #dcfce7; color: #15803d; }
-        .badge-rejected { background: #fee2e2; color: #b91c1c; }
-        .flex-between { display: flex; justify-content: space-between; align-items: center; }
-        .admin-only { background: #fee2e2; border-radius: 24px; padding: 16px; margin-top: 12px; }
-        button:active { transform: scale(0.97); }
-        hr { margin: 16px 0; }
-        .text-center { text-align: center; }
-        .toggle-form { color: #2563eb; cursor: pointer; font-weight: 600; margin-top: 12px; display: inline-block; }
-        .sub-tab { display: flex; gap: 10px; margin-bottom: 16px; border-bottom: 1px solid #eef2f6; }
-        .sub-tab-item { padding: 8px 0; cursor: pointer; font-weight: 600; font-size: 14px; color: #5b6e8c; border-bottom: 2px solid transparent; }
-        .sub-tab-item.active-sub { color: #2563eb; border-bottom-color: #2563eb; }
-        .saldo-warning { color: #dc2626; font-weight: bold; }
-        .current-saldo { background: #e6f7e6; padding: 4px 8px; border-radius: 12px; font-weight: 600; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .card {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        .status {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #b91c1c;
+            background: #fee2e2;
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .highlight {
+            background: #fef9c3;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+        }
+        .jadwal {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: #0f172a;
+        }
+        .link-box {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #dcfce7;
+            border-radius: 1rem;
+        }
+        .link-box a {
+            display: inline-block;
+            background: #075e54;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            transition: 0.2s;
+        }
+        .link-box a:hover {
+            background: #054a44;
+        }
+        .small-url {
+            font-size: 0.75rem;
+            word-break: break-all;
+            color: #334155;
+            margin-top: 0.5rem;
+        }
+        hr {
+            margin: 1rem 0;
+            border: none;
+            border-top: 1px solid #e2e8f0;
+        }
     </style>
 </head>
 <body>
-<div class="container" id="appRoot">
-    <div class="app-header">
-        <div class="greeting">
-            <span>📧 Storan Gmail</span>
-            <div id="userInfoArea"></div>
+    <div class="card">
+        <div class="status">⛔ STORAN GMAIL CLOSE</div>
+        <div class="message">
+            OPEN LAGI <strong>HARI SENIN - JUMAT</strong><br>
+            DARI JAM <span class="highlight">6:00 - 15:00</span><br>
+            <span style="font-size: 0.95rem;">✨ BISA LEBIH TERGANTUNG INFORMATION DARI SALURAN ADMIN ✨</span>
+        </div>
+        <div class="jadwal">
+            📌 Catatan: Operasional dapat diperpanjang melebihi pukul 15.00 sesuai pengumuman resmi dari admin.
+        </div>
+        <hr>
+        <div class="link-box">
+            🟢 <strong>SALURAN ADMIN RESMI</strong><br>
+            <a href="https://whatsapp.com/channel/0029VbCHT8AEFeXikXysYs46" target="_blank" rel="noopener noreferrer">
+                📱 Buka Channel WhatsApp
+            </a>
+            <div class="small-url">
+                https://whatsapp.com/channel/0029VbCHT8AEFeXikXysYs46
+            </div>
+        </div>
+        <div style="font-size: 0.7rem; margin-top: 1.5rem; color: #64748b;">
+            Pastikan selalu cek saluran admin untuk info jadwal terbaru.
         </div>
     </div>
-    <div id="navArea"></div>
-    <div class="main-content" id="mainContent"></div>
-</div>
-
-<script>
-    // STORAGE KEYS
-    const STORAGE_USERS = "gstore_users";
-    const STORAGE_STORAN = "gstore_storan";
-    const STORAGE_WITHDRAWALS = "gstore_withdrawals";
-    const STORAGE_ADMIN_SESSION = "gstore_admin_session";
-
-    let users = [];
-    let storanList = [];
-    let withdrawals = [];
-
-    let currentUser = null;
-    let adminLogged = false;
-    let activeTab = "beranda";
-    let userHistorySubTab = "deposits";
-    let adminPanelSubTab = "storan";
-
-    function persistData() {
-        localStorage.setItem(STORAGE_USERS, JSON.stringify(users));
-        localStorage.setItem(STORAGE_STORAN, JSON.stringify(storanList));
-        localStorage.setItem(STORAGE_WITHDRAWALS, JSON.stringify(withdrawals));
-    }
-
-    function loadData() {
-        const storedUsers = localStorage.getItem(STORAGE_USERS);
-        users = storedUsers ? JSON.parse(storedUsers) : [];
-        const storedStoran = localStorage.getItem(STORAGE_STORAN);
-        storanList = storedStoran ? JSON.parse(storedStoran) : [];
-        const storedWithdraw = localStorage.getItem(STORAGE_WITHDRAWALS);
-        withdrawals = storedWithdraw ? JSON.parse(storedWithdraw) : [];
-        const adminSess = localStorage.getItem(STORAGE_ADMIN_SESSION);
-        adminLogged = adminSess === "true";
-    }
-
-    function saveAdminSession(val) {
-        localStorage.setItem(STORAGE_ADMIN_SESSION, val ? "true" : "false");
-        adminLogged = val;
-        if(adminLogged) currentUser = null;
-        renderUI();
-    }
-
-    function registerUser(email, password, name) {
-        if (!email || !password) return { success: false, message: "Email dan password harus diisi" };
-        if (!email.includes("@")) return { success: false, message: "Email tidak valid" };
-        if (users.find(u => u.email === email)) return { success: false, message: "Email sudah terdaftar" };
-        const newUser = {
-            id: Date.now() + Math.random(),
-            email: email.trim(),
-            password: password,
-            name: name.trim() || email.split('@')[0],
-            saldo: 0
-        };
-        users.push(newUser);
-        persistData();
-        return { success: true, user: newUser };
-    }
-
-    function loginUser(email, password) {
-        const user = users.find(u => u.email === email && u.password === password);
-        if (!user) return { success: false, message: "Email atau password salah" };
-        return { success: true, user: user };
-    }
-
-    function addStoran(emailGmail, password, userId) {
-        if(password !== "aass1122") {
-            alert("❌ Password harus aass1122! Tidak boleh diubah.");
-            return false;
-        }
-        if(!emailGmail || !emailGmail.includes("@")) {
-            alert("Masukkan email Gmail yang valid.");
-            return false;
-        }
-        const newStoran = {
-            id: Date.now() + Math.random(),
-            userId: userId,
-            emailGmail: emailGmail.trim(),
-            password: password,
-            status: "pending",
-            createdAt: new Date().toISOString(),
-            rewardAmount: 2000
-        };
-        storanList.push(newStoran);
-        persistData();
-        alert("✅ Email berhasil di setorkan! Menunggu konfirmasi admin.");
-        return true;
-    }
-
-    function adminApproveStoran(storanId) {
-        const index = storanList.findIndex(s => s.id == storanId);
-        if(index === -1) return false;
-        const storan = storanList[index];
-        if(storan.status !== "pending") {
-            alert("Setoran sudah diproses sebelumnya.");
-            return false;
-        }
-        const targetUser = users.find(u => u.id === storan.userId);
-        if(!targetUser) return false;
-        targetUser.saldo += storan.rewardAmount;
-        storan.status = "success";
-        persistData();
-        alert(`✅ Berhasil approve! Saldo ${targetUser.name} bertambah Rp ${storan.rewardAmount.toLocaleString()}`);
-        renderUI();
-        return true;
-    }
-
-    function adminRejectStoran(storanId) {
-        const index = storanList.findIndex(s => s.id == storanId);
-        if(index === -1) return false;
-        const storan = storanList[index];
-        if(storan.status !== "pending") {
-            alert("Setoran sudah diproses sebelumnya.");
-            return false;
-        }
-        storan.status = "rejected";
-        persistData();
-        alert("❌ Setoran ditolak.");
-        renderUI();
-        return true;
-    }
-
-    // WITHDRAWAL: tarik SELURUH saldo (tidak bisa pilih nominal)
-    function createWithdrawalRequest(userId, noDana, namaRekening) {
-        const user = users.find(u => u.id === userId);
-        if (!user) return false;
-        const amount = user.saldo;
-        if (amount < 1000) {
-            alert("Minimal penarikan Rp 1.000. Saldo Anda belum mencukupi.");
-            return false;
-        }
-        if (!noDana || !namaRekening) {
-            alert("Nomor Dana/Nama Rekening harus diisi!");
-            return false;
-        }
-        // Cek apakah sudah ada permintaan pending untuk user ini (opsional: cegah multiple request)
-        const hasPending = withdrawals.some(w => w.userId === userId && w.status === "pending");
-        if (hasPending) {
-            alert("Anda sudah memiliki permintaan penarikan yang sedang diproses. Tunggu hingga disetujui/ditolak.");
-            return false;
-        }
-        const newWithdraw = {
-            id: Date.now() + Math.random(),
-            userId: userId,
-            amount: amount,
-            noDana: noDana.trim(),
-            namaRekening: namaRekening.trim(),
-            status: "pending",
-            createdAt: new Date().toISOString()
-        };
-        withdrawals.push(newWithdraw);
-        persistData();
-        alert(`✅ Permintaan penarikan seluruh saldo Rp ${amount.toLocaleString()} berhasil diajukan. Menunggu persetujuan admin.`);
-        return true;
-    }
-
-    function adminApproveWithdraw(withdrawId) {
-        const withdraw = withdrawals.find(w => w.id == withdrawId);
-        if (!withdraw) return false;
-        if (withdraw.status !== "pending") {
-            alert("Permintaan sudah diproses sebelumnya.");
-            return false;
-        }
-        const user = users.find(u => u.id === withdraw.userId);
-        if (!user) return false;
-        // Cek saldo saat ini (real-time)
-        if (user.saldo < withdraw.amount) {
-            alert(`Saldo user saat ini (Rp ${user.saldo.toLocaleString()}) kurang dari jumlah yang diminta (Rp ${withdraw.amount.toLocaleString()}). Penarikan ditolak.`);
-            return false;
-        }
-        user.saldo -= withdraw.amount;
-        withdraw.status = "success";
-        persistData();
-        alert(`✅ Penarikan disetujui! Saldo ${user.name} berkurang Rp ${withdraw.amount.toLocaleString()}.`);
-        renderUI();
-        return true;
-    }
-
-    function adminRejectWithdraw(withdrawId) {
-        const withdraw = withdrawals.find(w => w.id == withdrawId);
-        if (!withdraw) return false;
-        if (withdraw.status !== "pending") {
-            alert("Permintaan sudah diproses sebelumnya.");
-            return false;
-        }
-        withdraw.status = "rejected";
-        persistData();
-        alert("❌ Permintaan penarikan ditolak. Saldo user tidak berubah.");
-        renderUI();
-        return true;
-    }
-
-    function getUserWithdrawals(userId) {
-        return withdrawals.filter(w => w.userId === userId).sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
-    }
-
-    function getAllWithdrawalsWithUser() {
-        return withdrawals.map(w => {
-            const user = users.find(u => u.id === w.userId);
-            const currentSaldo = user ? user.saldo : 0;
-            return { ...w, userName: user?.name || "unknown", userEmail: user?.email || "unknown", currentSaldo };
-        }).sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
-    }
-
-    function getAllStoranWithUser() {
-        return storanList.map(s => {
-            const user = users.find(u => u.id === s.userId);
-            return { ...s, userEmail: user?.email || "unknown", userName: user?.name || user?.email || "unknown" };
-        }).sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
-    }
-
-    function getStoranByUser(userId) {
-        return storanList.filter(s => s.userId === userId).sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
-    }
-
-    function renderUI() {
-        const navDiv = document.getElementById("navArea");
-        const mainDiv = document.getElementById("mainContent");
-        const userInfoDiv = document.getElementById("userInfoArea");
-
-        if(currentUser && !adminLogged) {
-            userInfoDiv.innerHTML = `
-                <div class="user-badge">
-                    <i class="fas fa-user-circle" style="font-size:24px;"></i>
-                    <span style="font-size:13px; font-weight:500;">${currentUser.name}</span>
-                    <i class="fas fa-sign-out-alt" style="cursor:pointer; color:#ef4444;" id="logoutUserBtn"></i>
-                </div>
-            `;
-            const logoutBtn = document.getElementById("logoutUserBtn");
-            if(logoutBtn) logoutBtn.onclick = () => { currentUser = null; renderUI(); };
-        } else if(adminLogged) {
-            userInfoDiv.innerHTML = `
-                <div class="user-badge" style="background:#fee2e2;">
-                    <i class="fas fa-user-shield"></i>
-                    <span style="font-weight:600;">Admin Mode</span>
-                    <i class="fas fa-times-circle" style="cursor:pointer; color:#dc2626;" id="logoutAdminBtn"></i>
-                </div>
-            `;
-            const logoutAdmin = document.getElementById("logoutAdminBtn");
-            if(logoutAdmin) logoutAdmin.onclick = () => { saveAdminSession(false); currentUser = null; renderUI(); };
-        } else {
-            userInfoDiv.innerHTML = `<div class="user-badge"><i class="fas fa-user-circle"></i> <span id="showLoginOptions">Login</span></div>`;
-            const loginOpt = document.getElementById("showLoginOptions");
-            if(loginOpt) loginOpt.onclick = () => { activeTab = "loginpage"; renderUI(); };
-        }
-
-        let navItems = [];
-        if(adminLogged) {
-            navItems = [{ id: "adminpanel", icon: "fas fa-chart-line", label: "Admin Panel" }];
-        } else if(currentUser) {
-            navItems = [
-                { id: "beranda", icon: "fas fa-home", label: "Beranda" },
-                { id: "setor", icon: "fas fa-envelope", label: "Setor" },
-                { id: "riwayat", icon: "fas fa-history", label: "Riwayat" },
-                { id: "withdraw", icon: "fas fa-money-bill-wave", label: "Cairkan" }
-            ];
-        } else {
-            navItems = [{ id: "loginpage", icon: "fas fa-key", label: "Login / Daftar" }];
-        }
-
-        navDiv.innerHTML = `
-            <div class="nav-tabs">
-                ${navItems.map(item => `<div class="nav-item ${activeTab === item.id ? 'active' : ''}" data-tab="${item.id}"><i class="${item.icon}"></i> ${item.label}</div>`).join('')}
-            </div>
-            ${!adminLogged && !currentUser ? `<div class="admin-only text-center" style="margin:12px 20px; background:#f1f5f9;"><i class="fas fa-lock"></i> <strong>Admin Akses</strong> — <span id="adminLoginBtn" style="color:#2563eb; cursor:pointer; font-weight:bold;">Login Admin Khusus</span></div>` : ''}
-            ${!adminLogged && currentUser ? `<div class="admin-only text-center" style="margin:8px 20px 0; background:#f1f5f9;"><i class="fas fa-user-tie"></i> <span id="adminLoginTrigger" style="color:#2563eb; cursor:pointer;">Login sebagai Admin?</span></div>` : ''}
-        `;
-
-        document.querySelectorAll(".nav-item").forEach(el => {
-            el.addEventListener("click", (e) => {
-                const tabId = el.getAttribute("data-tab");
-                activeTab = tabId;
-                if (activeTab === "riwayat") userHistorySubTab = "deposits";
-                if (activeTab === "adminpanel") adminPanelSubTab = "storan";
-                renderUI();
-            });
-        });
-
-        const adminBtn = document.getElementById("adminLoginBtn");
-        if(adminBtn) adminBtn.onclick = () => showAdminLoginModal();
-        const adminTrigger = document.getElementById("adminLoginTrigger");
-        if(adminTrigger) adminTrigger.onclick = () => showAdminLoginModal();
-
-        if(adminLogged) {
-            renderAdminPanel(mainDiv);
-        } else if(currentUser) {
-            if(activeTab === "beranda") renderBeranda(mainDiv);
-            else if(activeTab === "setor") renderSetorForm(mainDiv);
-            else if(activeTab === "riwayat") renderRiwayatLengkap(mainDiv);
-            else if(activeTab === "withdraw") renderWithdrawForm(mainDiv);
-            else renderBeranda(mainDiv);
-        } else {
-            renderLoginRegisterPage(mainDiv);
-        }
-    }
-
-    function renderLoginRegisterPage(container) {
-        container.innerHTML = `
-            <div class="card text-center">
-                <i class="fas fa-envelope-open-text" style="font-size:48px; color:#3b82f6;"></i>
-                <h3 style="margin:16px 0 8px;">Storan Gmail By Taufik</h3>
-                <p>Login atau daftar untuk mulai setor email & dapatkan reward Rp2.000/email</p>
-                <hr>
-                <div id="loginForm">
-                    <div class="input-group">
-                        <label>Email</label>
-                        <input type="email" id="loginEmail" placeholder="Email Anda">
-                    </div>
-                    <div class="input-group">
-                        <label>Password</label>
-                        <input type="password" id="loginPassword" placeholder="Password">
-                    </div>
-                    <button id="doLoginBtn" class="btn">Login</button>
-                    <div class="text-center" style="margin-top:16px;">
-                        <span class="toggle-form" id="showRegisterBtn">Belum punya akun? Daftar</span>
-                    </div>
-                </div>
-                <div id="registerForm" style="display:none;">
-                    <div class="input-group">
-                        <label>Nama Lengkap</label>
-                        <input type="text" id="regName" placeholder="Nama Anda">
-                    </div>
-                    <div class="input-group">
-                        <label>Email</label>
-                        <input type="email" id="regEmail" placeholder="Email">
-                    </div>
-                    <div class="input-group">
-                        <label>Password</label>
-                        <input type="password" id="regPassword" placeholder="Password">
-                    </div>
-                    <button id="doRegisterBtn" class="btn" style="background:#10b981;">Daftar</button>
-                    <div class="text-center" style="margin-top:16px;">
-                        <span class="toggle-form" id="showLoginBtn">Sudah punya akun? Login</span>
-                    </div>
-                </div>
-            </div>
-        `;
-        document.getElementById("doLoginBtn")?.addEventListener("click", () => {
-            const email = document.getElementById("loginEmail").value;
-            const password = document.getElementById("loginPassword").value;
-            const result = loginUser(email, password);
-            if(result.success) {
-                currentUser = result.user;
-                activeTab = "beranda";
-                renderUI();
-            } else {
-                alert(result.message);
-            }
-        });
-        document.getElementById("doRegisterBtn")?.addEventListener("click", () => {
-            const name = document.getElementById("regName").value;
-            const email = document.getElementById("regEmail").value;
-            const password = document.getElementById("regPassword").value;
-            if (!name) {
-                alert("Nama lengkap harus diisi!");
-                return;
-            }
-            const result = registerUser(email, password, name);
-            if(result.success) {
-                alert("Registrasi berhasil! Silakan login.");
-                document.getElementById("loginForm").style.display = "block";
-                document.getElementById("registerForm").style.display = "none";
-                document.getElementById("loginEmail").value = email;
-                document.getElementById("loginPassword").value = password;
-            } else {
-                alert(result.message);
-            }
-        });
-        document.getElementById("showRegisterBtn")?.addEventListener("click", () => {
-            document.getElementById("loginForm").style.display = "none";
-            document.getElementById("registerForm").style.display = "block";
-        });
-        document.getElementById("showLoginBtn")?.addEventListener("click", () => {
-            document.getElementById("loginForm").style.display = "block";
-            document.getElementById("registerForm").style.display = "none";
-        });
-    }
-
-    function renderBeranda(container) {
-        const saldoUser = currentUser.saldo;
-        container.innerHTML = `
-            <div class="saldo-box">
-                <div>⭐ Saldo Anda</div>
-                <div class="saldo-nilai">Rp ${saldoUser.toLocaleString()}</div>
-                <div class="info-text" style="color:#cbd5e1;">Reward per email sukses: Rp 2.000</div>
-            </div>
-            <div class="card">
-                <div class="flex-between"><strong><i class="fas fa-envelope"></i> Generate Email Gmail</strong> <button id="generateEmailBtn" class="btn-outline" style="width:auto; padding:6px 14px;">Generate</button></div>
-                <div class="info-text" style="margin-top:12px;">Prefix: <strong>taufik</strong> + random angka@gmail.com<br>Copy email lalu daftarkan ke Gmail (pw aass1122), setelah itu setorkan melalui menu Setor.</div>
-                <div id="generatedEmailBox" style="background:#f1f5f9; margin-top:12px; padding:10px; border-radius:20px; font-family:monospace; word-break:break-all;"></div>
-            </div>
-            <div class="card">
-                <p><i class="fas fa-info-circle"></i> Pastikan email live sebelum setor, password wajib <strong>aass1122</strong>. Setoran akan pending dan admin akan approve/reject.</p>
-                <button id="goToSetorBtn" class="btn" style="margin-top:12px;"><i class="fas fa-paper-plane"></i> Setor Sekarang</button>
-            </div>
-        `;
-        document.getElementById("generateEmailBtn")?.addEventListener("click", () => {
-            const rand = Math.floor(Math.random() * 9999);
-            const genEmail = `taufik${rand}@gmail.com`;
-            document.getElementById("generatedEmailBox").innerHTML = `📧 ${genEmail} <i class="fas fa-copy" style="cursor:pointer; margin-left:8px;" id="copyEmail"></i>`;
-            document.getElementById("copyEmail")?.addEventListener("click", () => {
-                navigator.clipboard.writeText(genEmail);
-                alert("Email tersalin!");
-            });
-        });
-        document.getElementById("goToSetorBtn")?.addEventListener("click", () => { activeTab = "setor"; renderUI(); });
-    }
-
-    function renderSetorForm(container) {
-        container.innerHTML = `
-            <div class="card">
-                <h3><i class="fas fa-upload"></i> Setor Gmail</h3>
-                <div class="input-group">
-                    <label>Email Gmail yang sudah didaftarkan</label>
-                    <input type="email" id="storanEmail" placeholder="contoh@gmail.com" required>
-                </div>
-                <div class="input-group">
-                    <label>Password (WAJIB aass1122)</label>
-                    <input type="text" id="storanPassword" value="aass1122" readonly style="background:#f9f9fb;">
-                    <div class="info-text">* Password tidak boleh diubah, harus aass1122</div>
-                </div>
-                <button id="submitStoranBtn" class="btn"><i class="fas fa-check-circle"></i> Setor Email</button>
-            </div>
-        `;
-        document.getElementById("submitStoranBtn")?.addEventListener("click", () => {
-            const email = document.getElementById("storanEmail").value;
-            const pass = document.getElementById("storanPassword").value;
-            if(addStoran(email, pass, currentUser.id)) {
-                document.getElementById("storanEmail").value = "";
-                activeTab = "riwayat";
-                renderUI();
-            }
-        });
-    }
-
-    function renderRiwayatLengkap(container) {
-        const myStoran = getStoranByUser(currentUser.id);
-        const myWithdrawals = getUserWithdrawals(currentUser.id);
-        
-        let html = `<div class="card"><h3>📜 Riwayat Transaksi</h3>
-                    <div class="sub-tab">
-                        <div class="sub-tab-item ${userHistorySubTab === 'deposits' ? 'active-sub' : ''}" data-sub="deposits">📧 Setoran Email</div>
-                        <div class="sub-tab-item ${userHistorySubTab === 'withdrawals' ? 'active-sub' : ''}" data-sub="withdrawals">💰 Penarikan</div>
-                    </div>`;
-        
-        if (userHistorySubTab === "deposits") {
-            if (myStoran.length === 0) html += `<div class="info-text">Belum ada setoran email.</div>`;
-            else {
-                myStoran.forEach(s => {
-                    let statusBadge = s.status === 'pending' ? '<span class="badge badge-pending">⏳ Pending</span>' : (s.status === 'success' ? '<span class="badge badge-success">✅ Success (+2.000)</span>' : '<span class="badge badge-rejected">❌ Ditolak</span>');
-                    html += `<div class="riwayat-item"><div class="flex-between"><strong>${s.emailGmail}</strong> ${statusBadge}</div><div class="info-text">📅 ${new Date(s.createdAt).toLocaleString('id-ID')}</div><div class="info-text">🔑 pass: ${s.password}</div></div>`;
-                });
-            }
-        } else {
-            if (myWithdrawals.length === 0) html += `<div class="info-text">Belum ada permintaan penarikan.</div>`;
-            else {
-                myWithdrawals.forEach(w => {
-                    let statusBadge = w.status === 'pending' ? '<span class="badge badge-pending">Pending</span>' : (w.status === 'success' ? '<span class="badge badge-success">Sukses (saldo dikurangi)</span>' : '<span class="badge badge-rejected">Ditolak</span>');
-                    html += `<div class="riwayat-item"><div class="flex-between"><strong>💸 Seluruh Saldo Rp ${w.amount.toLocaleString()}</strong> ${statusBadge}</div><div class="info-text">📅 ${new Date(w.createdAt).toLocaleString('id-ID')}</div><div class="info-text">📱 Dana: ${w.noDana} | a.n ${w.namaRekening}</div></div>`;
-                });
-            }
-        }
-        html += `</div>`;
-        container.innerHTML = html;
-        
-        document.querySelectorAll(".sub-tab-item").forEach(el => {
-            el.addEventListener("click", () => {
-                userHistorySubTab = el.getAttribute("data-sub");
-                renderRiwayatLengkap(container);
-            });
-        });
-    }
-
-    // Form withdraw: tarik SEMUA saldo
-    function renderWithdrawForm(container) {
-        const saldoNow = currentUser.saldo;
-        container.innerHTML = `
-            <div class="card">
-                <h3>💸 Tarik Seluruh Saldo</h3>
-                <div class="saldo-nilai" style="color:#0f172a; font-size:28px;">Rp ${saldoNow.toLocaleString()}</div>
-                <div class="info-text">Anda akan menarik <strong>seluruh saldo</strong> yang tersedia. Minimal penarikan Rp 1.000.</div>
-                <div class="input-group">
-                    <label>Nomor Dana / Rekening</label>
-                    <input type="text" id="noDana" placeholder="08xxxxxxxxxx" required>
-                </div>
-                <div class="input-group">
-                    <label>Nama Lengkap Rekening</label>
-                    <input type="text" id="namaRekening" placeholder="Nama sesuai rekening" required>
-                </div>
-                <button id="requestWithdrawBtn" class="btn btn-warning"><i class="fas fa-paper-plane"></i> Ajukan Penarikan Seluruh Saldo</button>
-            </div>
-        `;
-        document.getElementById("requestWithdrawBtn")?.addEventListener("click", () => {
-            const noDana = document.getElementById("noDana").value;
-            const nama = document.getElementById("namaRekening").value;
-            if (saldoNow < 1000) {
-                alert("Saldo minimal Rp 1.000 untuk melakukan penarikan.");
-                return;
-            }
-            if (createWithdrawalRequest(currentUser.id, noDana, nama)) {
-                activeTab = "riwayat";
-                userHistorySubTab = "withdrawals";
-                renderUI();
-            }
-        });
-    }
-
-    // ADMIN PANEL: menampilkan saldo real-time user
-    function renderAdminPanel(container) {
-        const allStoran = getAllStoranWithUser();
-        const allWithdrawals = getAllWithdrawalsWithUser();
-        
-        let html = `<div class="card"><h3><i class="fas fa-users-cog"></i> Panel Admin</h3>
-                    <div class="sub-tab">
-                        <div class="sub-tab-item ${adminPanelSubTab === 'storan' ? 'active-sub' : ''}" data-admin-sub="storan">📧 Setoran Email</div>
-                        <div class="sub-tab-item ${adminPanelSubTab === 'withdrawals' ? 'active-sub' : ''}" data-admin-sub="withdrawals">💰 Penarikan Saldo</div>
-                    </div>`;
-        
-        if (adminPanelSubTab === "storan") {
-            if (allStoran.length === 0) html += `<div>Tidak ada setoran email.</div>`;
-            else {
-                allStoran.forEach(item => {
-                    let statusBadge = item.status === 'pending' ? '<span class="badge badge-pending">Pending</span>' : (item.status === 'success' ? '<span class="badge badge-success">Success</span>' : '<span class="badge badge-rejected">Ditolak</span>');
-                    html += `<div class="admin-setoran-item" style="border-left-color: ${item.status === 'pending' ? '#f97316' : (item.status === 'success' ? '#22c55e' : '#ef4444')}">
-                        <div class="flex-between"><strong>📧 ${item.emailGmail}</strong> ${statusBadge}</div>
-                        <div class="info-text">👤 User: ${item.userName} (${item.userEmail})</div>
-                        <div class="info-text">📅 ${new Date(item.createdAt).toLocaleString('id-ID')}</div>
-                        <div class="flex-between"><span>💎 Reward: Rp ${item.rewardAmount}</span>
-                        ${item.status === "pending" ? `<div><button class="btn-sm approveStoran" data-id="${item.id}" style="background:#10b981; color:white; border:none; margin-right:5px;">✔ Setujui</button><button class="btn-sm rejectStoran" data-id="${item.id}" style="background:#ef4444; color:white; border:none;">✖ Tolak</button></div>` : ''}</div>
-                    </div>`;
-                });
-            }
-        } else {
-            if (allWithdrawals.length === 0) html += `<div>Tidak ada permintaan penarikan.</div>`;
-            else {
-                allWithdrawals.forEach(w => {
-                    let statusBadge = w.status === 'pending' ? '<span class="badge badge-pending">Pending</span>' : (w.status === 'success' ? '<span class="badge badge-success">Sukses</span>' : '<span class="badge badge-rejected">Ditolak</span>');
-                    const saldoCukup = w.currentSaldo >= w.amount;
-                    html += `<div class="admin-setoran-item">
-                        <div class="flex-between"><strong>💰 Rp ${w.amount.toLocaleString()} (Seluruh Saldo saat request)</strong> ${statusBadge}</div>
-                        <div class="info-text">👤 User: ${w.userName} (${w.userEmail})</div>
-                        <div class="info-text">📅 ${new Date(w.createdAt).toLocaleString('id-ID')}</div>
-                        <div class="info-text">📱 Dana: ${w.noDana} | a.n ${w.namaRekening}</div>
-                        <div class="info-text"><span class="current-saldo">💰 Saldo USER saat ini: Rp ${w.currentSaldo.toLocaleString()}</span> ${!saldoCukup && w.status === 'pending' ? '<span class="saldo-warning"> (Saldo tidak mencukupi!)</span>' : ''}</div>
-                        ${w.status === "pending" ? `<div style="margin-top:10px;">
-                            ${saldoCukup ? `<button class="btn-sm approveWithdraw" data-id="${w.id}" style="background:#10b981; color:white;">✔ Setujui & Potong Saldo</button>` : `<button class="btn-sm" disabled style="background:#9ca3af; color:white;" title="Saldo tidak cukup">❌ Tidak Bisa Setujui</button>`}
-                            <button class="btn-sm rejectWithdraw" data-id="${w.id}" style="background:#ef4444; color:white; margin-left:8px;">✖ Tolak</button>
-                        </div>` : ''}
-                    </div>`;
-                });
-            }
-        }
-        html += `</div>`;
-        container.innerHTML = html;
-        
-        document.querySelectorAll(".approveStoran").forEach(btn => {
-            btn.addEventListener("click", () => adminApproveStoran(Number(btn.getAttribute("data-id"))));
-        });
-        document.querySelectorAll(".rejectStoran").forEach(btn => {
-            btn.addEventListener("click", () => adminRejectStoran(Number(btn.getAttribute("data-id"))));
-        });
-        document.querySelectorAll(".approveWithdraw").forEach(btn => {
-            btn.addEventListener("click", () => adminApproveWithdraw(Number(btn.getAttribute("data-id"))));
-        });
-        document.querySelectorAll(".rejectWithdraw").forEach(btn => {
-            btn.addEventListener("click", () => adminRejectWithdraw(Number(btn.getAttribute("data-id"))));
-        });
-        document.querySelectorAll(".sub-tab-item").forEach(el => {
-            el.addEventListener("click", () => {
-                adminPanelSubTab = el.getAttribute("data-admin-sub");
-                renderAdminPanel(container);
-            });
-        });
-    }
-
-    function showAdminLoginModal() {
-        const user = prompt("🔐 Login Admin Khusus\nMasukkan Username:");
-        if(user === null) return;
-        const pass = prompt("Masukkan Password:");
-        if(user === "gmail" && pass === "com") {
-            saveAdminSession(true);
-            currentUser = null;
-            renderUI();
-            alert("Selamat datang Admin!");
-        } else {
-            alert("Username atau password salah!");
-        }
-    }
-
-    function init() {
-        loadData();
-        renderUI();
-    }
-    init();
-</script>
 </body>
-              </html>
+</html>
